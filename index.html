@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixelshake — Photographe et filmmaker corporate à Bruxelles</title>
+  <meta name="description" content="Production photo et vidéo corporate à Bruxelles depuis 2009. Films d'entreprise, portraits, architecture, événements. Thomas Blairon, 15+ ans d'expérience." />
+  <meta name="theme-color" content="#141311" />
+  <meta property="og:title" content="Pixelshake — Photographe et filmmaker corporate à Bruxelles" />
+  <meta property="og:description" content="Production photo et vidéo corporate à Bruxelles depuis 2009. Films d'entreprise, portraits, architecture, événements." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixelshake.be" />
+  <link rel="icon" href="logo.png" type="image/png" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Pixelshake SPRL","founder":"Thomas Blairon","address":{"@type":"PostalAddress","streetAddress":"57 avenue Baron d'Huart","addressLocality":"Woluwe-Saint-Pierre","postalCode":"1150","addressCountry":"BE"},"email":"thomas@pixelshake.be","url":"https://pixelshake.be"}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,900&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Magnetic cursor -->
+<div id="cur" aria-hidden="true"></div>
+<div id="ring" aria-hidden="true"></div>
+
+<!-- Progress bar -->
+<div id="progress" aria-hidden="true"></div>
+
+<!-- Grain overlay -->
+<div id="grain" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAV — glass · progressive blur
+══════════════════════════════════════════════════════════ -->
+<header id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="logo-link" aria-label="Pixelshake — Accueil">
+      <img src="logo-white.png" alt="Pixelshake" class="logo-img" height="30" />
+    </a>
+    <nav class="nav-links" aria-label="Navigation">
+      <a href="#work"><span>Travail</span></a>
+      <a href="#services"><span>Services</span></a>
+      <a href="#why"><span>Pourquoi</span></a>
+      <a href="#about"><span>À propos</span></a>
+    </nav>
+    <a href="#contact" class="nav-cta">
+      <span>Prendre contact</span>
+      <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div id="mob" class="mob" hidden role="dialog" aria-modal="true">
+  <button id="mob-close" aria-label="Fermer">✕</button>
+  <nav class="mob-nav">
+    <a href="#work" class="mob-link"><span class="mob-num">01</span>Travail</a>
+    <a href="#services" class="mob-link"><span class="mob-num">02</span>Services</a>
+    <a href="#why" class="mob-link"><span class="mob-num">03</span>Pourquoi</a>
+    <a href="#about" class="mob-link"><span class="mob-num">04</span>À propos</a>
+    <a href="#contact" class="mob-link mob-link--cta"><span class="mob-num">→</span>Prendre contact</a>
+  </nav>
+  <div class="mob-foot">
+    <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>
+    <span>Bruxelles · Belgique</span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ══════════════════════════════════════════════════════════
+     01 — HERO
+══════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-media" aria-hidden="true">
+    <div class="hero-video-wrap">
+      <iframe
+        src="https://player.vimeo.com/video/1100274787?h=5849dccf8c&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+        class="hero-video-iframe"
+        allow="autoplay; fullscreen"
+        title="Showreel"
+      ></iframe>
+    </div>
+    <div class="hero-media__overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge reveal">
+      <span class="hero-badge__dot"></span>
+      <span>Bruxelles · En activité depuis 2009</span>
+    </div>
+
+    <h1 class="hero-h1">
+      <span class="hero-line reveal-text" style="--d:.05s">Des images corporate</span>
+      <span class="hero-line reveal-text" style="--d:.15s">qui font <em>le travail.</em></span>
+    </h1>
+
+    <p class="hero-sub reveal" style="--d:.45s">
+      Photo et vidéo pour entreprises, agences et promoteurs.<br class="d-br"/>
+      Basé à Bruxelles, en activité depuis 2009.
+    </p>
+
+    <div class="hero-btns reveal" style="--d:.6s">
+      <a href="#work" class="btn btn--primary" data-magnetic>
+        <span>Voir le travail</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn btn--ghost" data-magnetic>Prendre contact</a>
+      <a href="https://vimeo.com/1100274787/5849dccf8c" target="_blank" rel="noopener noreferrer" class="btn-showreel">
+        <span class="btn-showreel__play"><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="currentColor"/></svg></span>
+        <span>Showreel</span>
+      </a>
+    </div>
+
+    <div class="hero-meta reveal" style="--d:.75s">
+      <div class="hero-meta__item">
+        <span class="hero-meta__num">2009</span>
+        <span class="hero-meta__lbl">en activité depuis</span>
+      </div>
+      <div class="hero-meta__item">
+        <span class="hero-meta__num">15<em>+</em></span>
+        <span class="hero-meta__lbl">années de terrain</span>
+      </div>
+      <div class="hero-meta__item">
+        <span class="hero-meta__num">BE · LU</span>
+        <span class="hero-meta__lbl">couverture principale</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="hero-scroll__line"></span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     02 — MARQUEE
+══════════════════════════════════════════════════════════ -->
+<section id="marquee" aria-hidden="true">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Film d'entreprise</span><i>✦</i>
+      <span>Architecture</span><i>✦</i>
+      <span>Portrait corporate</span><i>✦</i>
+      <span>Événement</span><i>✦</i>
+      <span>Aftermovie</span><i>✦</i>
+      <span>Drone aérien</span><i>✦</i>
+      <span>Documentaire</span><i>✦</i>
+      <span>Suivi long terme</span><i>✦</i>
+      <span>Film d'entreprise</span><i>✦</i>
+      <span>Architecture</span><i>✦</i>
+      <span>Portrait corporate</span><i>✦</i>
+      <span>Événement</span><i>✦</i>
+      <span>Aftermovie</span><i>✦</i>
+      <span>Drone aérien</span><i>✦</i>
+      <span>Documentaire</span><i>✦</i>
+      <span>Suivi long terme</span><i>✦</i>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     03 — CLIENTS
+══════════════════════════════════════════════════════════ -->
+<section id="clients">
+  <div class="clients-inner">
+    <p class="clients-label">Ils me font confiance</p>
+    <div class="clients-logos">
+      <span class="client-name">BESIX</span>
+      <span class="client-sep">✦</span>
+      <span class="client-name">IMMOBEL</span>
+      <span class="client-sep">✦</span>
+      <span class="client-name">EIFFAGE</span>
+      <span class="client-sep">✦</span>
+      <span class="client-name">MATEXI</span>
+      <span class="client-sep">✦</span>
+      <span class="client-name">CBRE</span>
+      <span class="client-sep">✦</span>
+      <span class="client-name">AG REAL ESTATE</span>
+      <span class="client-sep">✦</span>
+      <span class="client-name">VINCENT PIRONT</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     04 — MANIFESTO
+══════════════════════════════════════════════════════════ -->
+<section id="manifesto">
+  <div class="manifesto-inner">
+    <p class="section-label reveal"><span>01</span> Ce que je fais</p>
+    <h2 class="manifesto-h2 reveal-text" style="--d:.1s">
+      Spécialiste immobilier<br/>commercial <em>&amp; industrie.</em>
+    </h2>
+    <div class="manifesto-grid">
+      <div class="manifesto-body reveal" style="--d:.2s">
+        <p>Quinze ans de production terrain exclusivement au service de l'immobilier commercial, du BTP et de l'industrie belge.</p>
+        <p>Chantiers, actifs en commercialisation, sites industriels, films corporate — avec la rigueur d'un interlocuteur qui comprend vos enjeux sectoriels.</p>
+      </div>
+      <div class="manifesto-signal reveal" style="--d:.3s">
+        <span class="manifesto-signal__k">Positionnement</span>
+        <p>Photographe et filmmaker spécialisé immobilier &amp; industrie à Bruxelles. Quinze ans au côté de promoteurs, constructeurs et industriels belges.</p>
+        <a href="#contact" class="link-arrow" data-magnetic>
+          <span>Écrire à Thomas</span>
+          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     05 — PILLARS (bento)
+══════════════════════════════════════════════════════════ -->
+<section id="pillars">
+  <div class="pillars-inner">
+    <div class="pillars-head">
+      <p class="section-label reveal"><span>02</span> Prestations</p>
+      <h2 class="pillars-h2 reveal-text" style="--d:.1s">Six types<br/>de <em>production.</em></h2>
+    </div>
+
+    <div class="bento">
+      <article class="bento-card bento-card--a reveal" style="--d:.05s">
+        <span class="bento-num">01</span>
+        <h3 class="bento-title">Film de <em>présentation</em></h3>
+        <p class="bento-body">Présentation d'un projet immobilier, film de quartier, film institutionnel promoteur. Pour convaincre avant même la livraison.</p>
+        <div class="bento-tag">Promoteur · Vente sur plan</div>
+      </article>
+
+      <article class="bento-card bento-card--b reveal" style="--d:.1s">
+        <span class="bento-num">02</span>
+        <h3 class="bento-title">Reportage <em>photo</em></h3>
+        <p class="bento-body">Reportage photo d'un bien, d'un chantier, d'un quartier. Faire parler un bâtiment sans tricher avec la lumière.</p>
+        <div class="bento-tag">Architecture · Immobilier</div>
+      </article>
+
+      <article class="bento-card bento-card--c reveal" style="--d:.15s">
+        <span class="bento-num">03</span>
+        <h3 class="bento-title">Film <em>interviews</em></h3>
+        <p class="bento-body">Interviews d'architectes, promoteurs et acteurs du projet. Humaniser un développement immobilier par ceux qui le portent.</p>
+        <div class="bento-tag">Interviews · Corporate</div>
+      </article>
+
+      <article class="bento-card bento-card--a reveal" style="--d:.2s">
+        <span class="bento-num">04</span>
+        <h3 class="bento-title">Réseaux sociaux &amp; <em>stratégie</em></h3>
+        <p class="bento-body">Formats courts, cadrage vertical, conseils de stratégie. Contenus adaptés à chaque canal pour attirer des acheteurs sur plan.</p>
+        <div class="bento-tag">Social · Digital · Stratégie</div>
+      </article>
+
+      <article class="bento-card bento-card--b reveal" style="--d:.25s">
+        <span class="bento-num">05</span>
+        <h3 class="bento-title">Drone &amp; <em>aérien</em></h3>
+        <p class="bento-body">Vue du site, du quartier, du contexte urbain. Indispensable pour situer un projet et révéler son échelle réelle.</p>
+        <div class="bento-tag">Drone · Aérien</div>
+      </article>
+
+      <article class="bento-card bento-card--c reveal" style="--d:.3s">
+        <span class="bento-num">06</span>
+        <h3 class="bento-title">Suivi chantier &amp; <em>timelapse</em></h3>
+        <p class="bento-body">De la première pierre à la livraison. Timelapse, avant/après, archive valorisante pour le promoteur et ses partenaires.</p>
+        <div class="bento-tag">Timelapse · Avant/Après · Long terme</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     06 — WORK
+══════════════════════════════════════════════════════════ -->
+<section id="work" class="section--light">
+  <div class="work-inner">
+    <div class="work-head">
+      <p class="section-label section-label--dark reveal"><span>03</span> Travail récent</p>
+      <h2 class="work-h2 reveal-text" style="--d:.1s">Projets <em>récents.</em></h2>
+      <p class="work-intro reveal" style="--d:.2s">Une sélection de ce que j'ai produit ces derniers mois pour des entreprises, agences et institutions à Bruxelles et ailleurs.</p>
+    </div>
+
+    <div class="work-grid">
+      <article class="work-card work-card--wide reveal" style="--d:.05s" data-tilt>
+        <div class="work-card__img">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=85" alt="Besix — suivi de chantier" loading="lazy" width="1400" height="900" />
+        </div>
+        <div class="work-card__info">
+          <span class="work-card__tag">Reportage industriel</span>
+          <h3 class="work-card__title">Besix — Suivi de chantier</h3>
+          <p class="work-card__sub">Bruxelles · Photo &amp; vidéo · 2025</p>
+        </div>
+      </article>
+
+      <article class="work-card reveal" style="--d:.1s" data-tilt>
+        <div class="work-card__img">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85" alt="Immobel — tour de bureaux" loading="lazy" width="900" height="1100" />
+        </div>
+        <div class="work-card__info">
+          <span class="work-card__tag">Immobilier commercial</span>
+          <h3 class="work-card__title">Immobel — Tour de bureaux</h3>
+          <p class="work-card__sub">Bruxelles · Architecture</p>
+        </div>
+      </article>
+
+      <article class="work-card reveal" style="--d:.15s" data-tilt>
+        <div class="work-card__img">
+          <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=900&q=85" alt="Eiffage — vue aérienne site" loading="lazy" width="900" height="900" />
+        </div>
+        <div class="work-card__info">
+          <span class="work-card__tag">Drone certifié</span>
+          <h3 class="work-card__title">Eiffage — Vue aérienne</h3>
+          <p class="work-card__sub">Wallonie · Drone 4K</p>
+        </div>
+      </article>
+
+      <article class="work-card reveal" style="--d:.05s" data-tilt>
+        <div class="work-card__img">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=85" alt="Portraits dirigeants corporate" loading="lazy" width="900" height="900" />
+        </div>
+        <div class="work-card__info">
+          <span class="work-card__tag">Portraits corporate</span>
+          <h3 class="work-card__title">Comité de direction</h3>
+          <p class="work-card__sub">Bruxelles · Portraits &amp; équipe</p>
+        </div>
+      </article>
+
+      <article class="work-card reveal" style="--d:.1s" data-tilt>
+        <div class="work-card__img">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&q=85" alt="Aftermovie — convention corporate" loading="lazy" width="900" height="1100" />
+        </div>
+        <div class="work-card__info">
+          <span class="work-card__tag">Aftermovie event</span>
+          <h3 class="work-card__title">Convention annuelle</h3>
+          <p class="work-card__sub">Bruxelles · Reportage &amp; aftermovie</p>
+        </div>
+      </article>
+
+      <article class="work-card work-card--wide reveal" style="--d:.15s" data-tilt>
+        <div class="work-card__img">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&q=85" alt="AG Real Estate — timelapse" loading="lazy" width="1400" height="900" />
+        </div>
+        <div class="work-card__info">
+          <span class="work-card__tag">Timelapse</span>
+          <h3 class="work-card__title">AG Real Estate — Timelapse</h3>
+          <p class="work-card__sub">Bruxelles · De la première pierre à la livraison</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Videos -->
+    <div class="videos-head">
+      <p class="section-label section-label--dark reveal"><span>04</span> Films</p>
+      <h2 class="videos-h2 reveal-text" style="--d:.1s">En <em>mouvement.</em></h2>
+    </div>
+
+    <div class="videos-grid">
+      <div class="video-card reveal" style="--d:.05s">
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/1128178164?h=877dd53d90&title=0&byline=0&portrait=0&color=4169DE" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" title="Drone & Vues aériennes"></iframe>
+        </div>
+        <div class="video-card__info">
+          <h3>Drone &amp; Vues aériennes</h3>
+          <p>4K · Certifié · Autorisations incluses</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal" style="--d:.1s">
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/1143043297?h=1d4ac99a9f&title=0&byline=0&portrait=0&color=4169DE" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" title="Recrutement Promoteur"></iframe>
+        </div>
+        <div class="video-card__info">
+          <h3>Recrutement — Promoteur immobilier</h3>
+          <p>Corporate · Employer brand · Bruxelles</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal" style="--d:.15s">
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/1087695093?title=0&byline=0&portrait=0&color=4169DE" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" title="Auto & Event"></iframe>
+        </div>
+        <div class="video-card__info">
+          <h3>Marque automobile &amp; événement</h3>
+          <p>Brand content · Event · Corporate</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal" style="--d:.2s">
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/1110012190?h=bca6ad3ff8&title=0&byline=0&portrait=0&color=4169DE" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" title="Toitures industrielles"></iframe>
+        </div>
+        <div class="video-card__info">
+          <h3>Toitures industrielles</h3>
+          <p>Reportage · Industrie · Drone</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal" style="--d:.05s">
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/647714330?title=0&byline=0&portrait=0&color=4169DE" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" title="Constructeur automobile"></iframe>
+        </div>
+        <div class="video-card__info">
+          <h3>Constructeur automobile</h3>
+          <p>Industrie · Brand film</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal" style="--d:.15s">
+        <div class="video-embed">
+          <iframe src="https://player.vimeo.com/video/1152527710?h=4f5552eeb1&title=0&byline=0&portrait=0&color=4169DE" allow="autoplay; fullscreen; picture-in-picture" loading="lazy" title="Promoteur immobilier — Film de projet"></iframe>
+        </div>
+        <div class="video-card__info">
+          <h3>Promoteur immobilier — Film de projet</h3>
+          <p>Corporate · Immobilier · Bruxelles</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     07 — SERVICES
+══════════════════════════════════════════════════════════ -->
+<section id="services">
+  <div class="services-inner">
+    <div class="services-head">
+      <p class="section-label reveal"><span>05</span> Services</p>
+      <h2 class="services-h2 reveal-text" style="--d:.1s">Cinq <em>prestations</em><br/>en détail.</h2>
+      <p class="services-intro reveal" style="--d:.2s">Une section par type de prestation. Pour qui, pour quoi, comment.</p>
+    </div>
+
+    <div class="svc-list">
+      <details class="svc-item reveal" style="--d:.05s" open>
+        <summary>
+          <span class="svc-n">01</span>
+          <span class="svc-title">Film d'entreprise</span>
+          <span class="svc-tag">Corporate · Brand</span>
+          <span class="svc-plus" aria-hidden="true"></span>
+        </summary>
+        <div class="svc-content">
+          <p>Un film corporate n'est pas une plaquette animée. C'est l'occasion rare de dire, en 90 secondes ou en 10 minutes, ce que votre entreprise fait réellement — avec le bon angle, le bon rythme, et des images qui tiennent face à ce que voit votre audience ailleurs.</p>
+          <p>J'accompagne de A à Z : écriture, repérages, tournage, montage, livraison. Pour les productions plus lourdes, je coordonne une équipe de freelances spécialisés.</p>
+        </div>
+      </details>
+
+      <details class="svc-item reveal" style="--d:.1s">
+        <summary>
+          <span class="svc-n">02</span>
+          <span class="svc-title">Architecture &amp; immobilier</span>
+          <span class="svc-tag">Foncières · Promoteurs</span>
+          <span class="svc-plus" aria-hidden="true"></span>
+        </summary>
+        <div class="svc-content">
+          <p>Bureaux, sites industriels, logistique, biens de prestige. Je photographie des bâtiments pour des foncières, des promoteurs et des architectes depuis plus de dix ans — avec une attention particulière à la lumière naturelle, au cadre juste, et à la cohérence de la série.</p>
+          <p>Drone inclus quand le site le justifie.</p>
+        </div>
+      </details>
+
+      <details class="svc-item reveal" style="--d:.15s">
+        <summary>
+          <span class="svc-n">03</span>
+          <span class="svc-title">Portrait corporate</span>
+          <span class="svc-tag">Équipes &amp; dirigeants</span>
+          <span class="svc-plus" aria-hidden="true"></span>
+        </summary>
+        <div class="svc-content">
+          <p>Portraits individuels, portraits d'équipe, portraits dirigeants. L'objectif n'est pas de figer une pose mais de produire une image qui représente vraiment quelqu'un — utilisable en LinkedIn, rapport annuel, site corporate ou communiqué de presse.</p>
+          <p>Séances en studio, au bureau, ou sur site.</p>
+        </div>
+      </details>
+
+      <details class="svc-item reveal" style="--d:.2s">
+        <summary>
+          <span class="svc-n">04</span>
+          <span class="svc-title">Événement &amp; aftermovie</span>
+          <span class="svc-tag">Conférences · Soirées</span>
+          <span class="svc-plus" aria-hidden="true"></span>
+        </summary>
+        <div class="svc-content">
+          <p>Couverture photo et vidéo d'un même évènement, par une seule personne. Conférences, soirées clients, inaugurations, séminaires. Une première série de photos vous est livrée en direct pendant l'événement pour que vous puissiez communiquer immédiatement — réseaux sociaux, relations presse, posts live. La sélection complète et l'aftermovie suivent dans un délai convenu avec vous. Format adapté à votre usage final.</p>
+        </div>
+      </details>
+
+      <details class="svc-item reveal" style="--d:.25s">
+        <summary>
+          <span class="svc-n">05</span>
+          <span class="svc-title">Drone &amp; aérien</span>
+          <span class="svc-tag">Pilote certifié</span>
+          <span class="svc-plus" aria-hidden="true"></span>
+        </summary>
+        <div class="svc-content">
+          <p>Pilote de drone certifié. Plans aériens pour chantiers, sites industriels, biens immobiliers, événements outdoor. Intégrés à une production photo/vidéo ou en prestation dédiée.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     08 — POURQUOI (these clients come back)
+══════════════════════════════════════════════════════════ -->
+<section id="why">
+  <div class="process-inner">
+    <div class="process-head">
+      <p class="section-label reveal"><span>06</span> Pourquoi</p>
+      <h2 class="process-h2 reveal-text" style="--d:.1s">Pourquoi ces<br/>clients <em>reviennent.</em></h2>
+      <p class="process-intro reveal" style="--d:.2s">Quatre raisons concrètes. Pas de "valeurs", pas de "mission".</p>
+    </div>
+
+    <ol class="process-steps process-steps--4">
+      <li class="pstep reveal" style="--d:.05s">
+        <span class="pstep-num">01</span>
+        <h3>Expérience</h3>
+        <p>Depuis 2009, j'ai produit pour des cabinets d'avocats, des foncières, des agences, des institutions européennes, des organisateurs de conférences. La plupart reviennent. Quelques-uns sont là depuis dix ans.</p>
+      </li>
+      <li class="pstep reveal" style="--d:.1s">
+        <span class="pstep-num">02</span>
+        <h3>Anticipation</h3>
+        <p>La moitié d'un bon tournage se joue avant d'arriver. Repérages, lumière, planning, plan B. Vous ne payez pas que le jour J — vous payez l'absence d'imprévus le jour J.</p>
+      </li>
+      <li class="pstep reveal" style="--d:.15s">
+        <span class="pstep-num">03</span>
+        <h3>Un interlocuteur</h3>
+        <p>Vous avez un interlocuteur unique du brief à la livraison. Sur les projets qui le demandent, je m'entoure des meilleurs freelances de mon réseau — chef op, cadreur, monteur — plutôt que de tout faire seul.</p>
+      </li>
+      <li class="pstep reveal" style="--d:.2s">
+        <span class="pstep-num">04</span>
+        <h3>Matériel en propre</h3>
+        <p>Caméras, optiques, son, lumière, drone : équipement professionnel à jour, en propre. Pas de coût de location caché dans les devis, pas de location improvisée la veille.</p>
+      </li>
+    </ol>
+
+    <div class="process-note reveal" style="--d:.3s">
+      <p><strong>Je ne suis pas le moins cher. Je suis ce qu'il faut quand le résultat doit être là.</strong> Sans devoir tout réexpliquer à chaque étape.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     11 — ABOUT
+══════════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-left">
+      <p class="section-label reveal"><span>07</span> À propos</p>
+      <h2 class="about-h2 reveal-text" style="--d:.1s">Thomas <em>Blairon.</em></h2>
+      <p class="about-body reveal" style="--d:.2s">
+        Je m'appelle Thomas Blairon. Je suis photographe et filmmaker à Bruxelles depuis 2009. J'ai fondé Pixelshake pour travailler avec des entreprises qui comprennent qu'une image bien faite n'est pas un coût, mais un outil.
+      </p>
+      <p class="about-body reveal" style="--d:.25s">
+        Je travaille en solo, renforcé selon les projets par un réseau de freelances spécialisés que j'ai appris à choisir au fil des années. C'est ce qui me permet d'être agile sur les petites productions et rigoureux sur les plus grosses, sans infrastructure lourde à facturer.
+      </p>
+      <p class="about-body reveal" style="--d:.3s">
+        Je ne suis pas le moins cher, je ne suis pas le plus cher. Je suis ce qu'il faut quand vous avez besoin que le résultat soit là, sans devoir tout réexpliquer à chaque étape.
+      </p>
+      <p class="about-body reveal" style="--d:.35s">
+        Basé à Bruxelles, je travaille principalement en Belgique, au Luxembourg et occasionnellement ailleurs en Europe pour des clients récurrents. Je parle français, anglais et néerlandais.
+      </p>
+      <div class="about-facts reveal" style="--d:.4s">
+        <div><span>En activité depuis</span><strong>2009</strong></div>
+        <div><span>Basé à</span><strong>Bruxelles</strong></div>
+        <div><span>Couverture</span><strong>BE · LU · EU</strong></div>
+        <div><span>Langues</span><strong>FR · EN · NL</strong></div>
+      </div>
+      <p class="about-sig reveal" style="--d:.45s">— Thomas Blairon</p>
+    </div>
+    <div class="about-right reveal" style="--d:.2s">
+      <div class="about-img-wrap" data-tilt>
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=85" alt="Thomas Blairon" loading="lazy" width="900" height="1200" />
+        <span class="about-img-badge">Thomas Blairon · Bruxelles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     09 — CONTACT
+══════════════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-inner">
+    <p class="contact-eyebrow reveal">Travaillons ensemble</p>
+    <h2 class="contact-h2 reveal-text" style="--d:.1s">
+      Un projet<br/>en <em>tête&nbsp;?</em>
+    </h2>
+    <p class="contact-sub reveal" style="--d:.2s">Le plus simple est de m'écrire avec quelques lignes sur ce que vous voulez faire. Je reviens vers vous dans la journée — par mail, par téléphone ou en vidéo selon votre préférence.</p>
+
+    <div class="contact-btns reveal" style="--d:.25s">
+      <a href="mailto:thomas@pixelshake.be" class="btn btn--primary btn--lg" data-magnetic>
+        <span>Écrire à Thomas</span>
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:+32477502976" class="btn btn--ghost btn--lg" data-magnetic>
+        <span>+32 477 502 976</span>
+      </a>
+    </div>
+
+    <div class="contact-grid reveal" style="--d:.35s">
+      <div class="contact-col">
+        <span class="contact-col__k">Écrire</span>
+        <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>
+      </div>
+      <div class="contact-col">
+        <span class="contact-col__k">Appeler</span>
+        <a href="tel:+32477502976">+32 477 502 976</a>
+      </div>
+      <div class="contact-col">
+        <span class="contact-col__k">Studio</span>
+        <span>Bruxelles<br/>Belgique</span>
+      </div>
+      <div class="contact-col">
+        <span class="contact-col__k">Couverture</span>
+        <span>BE · LU<br/>EU sur devis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <h2 class="footer-big">Pixelshake<span>.</span></h2>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <span class="footer-k">Contact</span>
+      <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>
+      <a href="tel:+32477502976">+32 477 502 976</a>
+      <span>Bruxelles · Belgique</span>
+    </div>
+    <div class="footer-col">
+      <span class="footer-k">Sitemap</span>
+      <a href="#work">Travail</a>
+      <a href="#services">Services</a>
+      <a href="#why">Pourquoi</a>
+      <a href="#about">À propos</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-k">Ailleurs</span>
+      <a href="https://linkedin.com/in/thomasblairon" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="https://vimeo.com/pixelshake" target="_blank" rel="noopener noreferrer">Vimeo ↗</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+    </div>
+    <div class="footer-col footer-col--legal">
+      <span class="footer-k">Mentions</span>
+      <span>Pixelshake SPRL</span>
+      <span>BE 0678 441 061</span>
+      <span>© 2026 — Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<a href="#contact" class="float-cta" aria-label="Prendre contact" data-magnetic>
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
