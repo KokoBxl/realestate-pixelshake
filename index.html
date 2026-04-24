@@ -598,19 +598,75 @@
     <h2 class="contact-h2 reveal-text" style="--d:.1s" data-i18n-html="contact.h2">
       Un projet<br/>en <em>tête&nbsp;?</em>
     </h2>
-    <p class="contact-sub reveal" style="--d:.2s" data-i18n-html="contact.sub">Le plus simple est de m'écrire avec quelques lignes sur ce que vous voulez faire. Je reviens vers vous dans la journée — par mail, par téléphone ou en vidéo selon votre préférence.</p>
+    <p class="contact-sub reveal" style="--d:.2s" data-i18n-html="contact.sub">Le plus simple est de m'écrire avec quelques lignes sur ce que vous voulez faire. Je reviens vers vous dans la journée.</p>
 
-    <div class="contact-btns reveal" style="--d:.25s">
-      <a href="mailto:thomas@pixelshake.be" class="btn btn--primary btn--lg" data-magnetic>
-        <span data-i18n-html="contact.btn.mail">Écrire à Thomas</span>
-        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="tel:+32477502976" class="btn btn--ghost btn--lg" data-magnetic>
-        <span>+32 477 502 976</span>
-      </a>
-    </div>
+    <!-- Contact form — Netlify Forms -->
+    <form
+      id="contact-form"
+      class="contact-form reveal"
+      style="--d:.3s"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      novalidate
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p hidden><label>Ne pas remplir : <input name="bot-field" /></label></p>
 
-    <div class="contact-grid reveal" style="--d:.35s">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="cf-name" data-i18n-html="contact.form.name.lbl">Nom</label>
+          <input class="form-input" type="text" id="cf-name" name="name" required
+            data-i18n-placeholder="contact.form.name.ph"
+            placeholder="Votre nom" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cf-email" data-i18n-html="contact.form.email.lbl">Email</label>
+          <input class="form-input" type="email" id="cf-email" name="email" required
+            placeholder="votre@email.com" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="cf-company" data-i18n-html="contact.form.company.lbl">Entreprise / Projet</label>
+        <input class="form-input" type="text" id="cf-company" name="company"
+          data-i18n-placeholder="contact.form.company.ph"
+          placeholder="Promoteur, foncière, industrie..." />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="cf-message" data-i18n-html="contact.form.msg.lbl">Message</label>
+        <textarea class="form-input form-textarea" id="cf-message" name="message" required rows="5"
+          data-i18n-placeholder="contact.form.msg.ph"
+          placeholder="Décrivez votre projet en quelques lignes..."></textarea>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="btn btn--primary btn--lg form-submit" data-magnetic>
+          <span class="form-submit__label" data-i18n-html="contact.form.submit">Envoyer le message</span>
+          <svg class="form-submit__arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="form-submit__spin" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="32" stroke-dashoffset="32" stroke-linecap="round"/></svg>
+        </button>
+        <p class="form-alt">
+          <span data-i18n-html="contact.form.or">ou directement :</span>
+          <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>
+          · <a href="tel:+32477502976">+32 477 502 976</a>
+        </p>
+      </div>
+
+      <!-- Success / Error messages -->
+      <div class="form-message form-message--success" id="form-success" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n-html="contact.form.success">Message envoyé — je vous reviens dans la journée.</span>
+      </div>
+      <div class="form-message form-message--error" id="form-error" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 8v4m0 4h.01M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span data-i18n-html="contact.form.error">Erreur d'envoi. Écrivez directement à <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a></span>
+      </div>
+    </form>
+
+    <div class="contact-grid reveal" style="--d:.5s">
       <div class="contact-col">
         <span class="contact-col__k" data-i18n-html="contact.write.lbl">Écrire</span>
         <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>

@@ -384,7 +384,7 @@
       // Contact
       'contact.eyebrow':   'Travaillons ensemble',
       'contact.h2':        'Un projet<br/>en <em>tête&nbsp;?</em>',
-      'contact.sub':       "Le plus simple est de m'écrire avec quelques lignes sur ce que vous voulez faire. Je reviens vers vous dans la journée — par mail, par téléphone ou en vidéo selon votre préférence.",
+      'contact.sub':       "Le plus simple est de m'écrire avec quelques lignes sur ce que vous voulez faire. Je reviens vers vous dans la journée.",
       'contact.btn.mail':  'Écrire à Thomas',
       'contact.write.lbl': 'Écrire',
       'contact.call.lbl':  'Appeler',
@@ -392,6 +392,18 @@
       'contact.studio.val':'Bruxelles<br/>Belgique',
       'contact.cov.lbl':   'Couverture',
       'contact.cov.val':   'BE · LU<br/>EU sur devis',
+      // Form
+      'contact.form.name.lbl':    'Nom',
+      'contact.form.name.ph':     'Votre nom',
+      'contact.form.email.lbl':   'Email',
+      'contact.form.company.lbl': 'Entreprise / Projet',
+      'contact.form.company.ph':  'Promoteur, foncière, industrie...',
+      'contact.form.msg.lbl':     'Message',
+      'contact.form.msg.ph':      'Décrivez votre projet en quelques lignes...',
+      'contact.form.submit':      'Envoyer le message',
+      'contact.form.or':          'ou directement :',
+      'contact.form.success':     'Message envoyé — je vous reviens dans la journée.',
+      'contact.form.error':       'Erreur d\'envoi. Écrivez directement à <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>',
 
       // Footer
       'footer.contact.k': 'Contact',
@@ -558,7 +570,7 @@
       // Contact
       'contact.eyebrow':   'Laten we samenwerken',
       'contact.h2':        'Een project<br/>in <em>gedachten&nbsp;?</em>',
-      'contact.sub':       'Het eenvoudigste is me te schrijven met een paar regels over wat u wilt doen. Ik kom dezelfde dag terug bij u — per mail, telefoon of video naar uw voorkeur.',
+      'contact.sub':       'Het eenvoudigste is me te schrijven met een paar regels over wat u wilt doen. Ik kom dezelfde dag terug bij u.',
       'contact.btn.mail':  'Schrijf naar Thomas',
       'contact.write.lbl': 'Schrijven',
       'contact.call.lbl':  'Bellen',
@@ -566,6 +578,18 @@
       'contact.studio.val':'Brussel<br/>België',
       'contact.cov.lbl':   'Dekking',
       'contact.cov.val':   'BE · LU<br/>EU op aanvraag',
+      // Form
+      'contact.form.name.lbl':    'Naam',
+      'contact.form.name.ph':     'Uw naam',
+      'contact.form.email.lbl':   'E-mail',
+      'contact.form.company.lbl': 'Bedrijf / Project',
+      'contact.form.company.ph':  'Promotor, vastgoedfonds, industrie...',
+      'contact.form.msg.lbl':     'Bericht',
+      'contact.form.msg.ph':      'Beschrijf uw project in een paar regels...',
+      'contact.form.submit':      'Bericht verzenden',
+      'contact.form.or':          'of rechtstreeks :',
+      'contact.form.success':     'Bericht verzonden — ik kom dezelfde dag bij u terug.',
+      'contact.form.error':       'Verzendfout. Schrijf rechtstreeks naar <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>',
 
       // Footer
       'footer.contact.k': 'Contact',
@@ -732,7 +756,7 @@
       // Contact
       'contact.eyebrow':   "Let's work together",
       'contact.h2':        'A project<br/>in <em>mind&nbsp;?</em>',
-      'contact.sub':       "The simplest thing is to write to me with a few lines about what you want to do. I'll get back to you the same day — by email, phone or video as you prefer.",
+      'contact.sub':       "The simplest thing is to write to me with a few lines about what you want to do. I'll get back to you the same day.",
       'contact.btn.mail':  'Write to Thomas',
       'contact.write.lbl': 'Write',
       'contact.call.lbl':  'Call',
@@ -740,6 +764,18 @@
       'contact.studio.val':'Brussels<br/>Belgium',
       'contact.cov.lbl':   'Coverage',
       'contact.cov.val':   'BE · LU<br/>EU on quote',
+      // Form
+      'contact.form.name.lbl':    'Name',
+      'contact.form.name.ph':     'Your name',
+      'contact.form.email.lbl':   'Email',
+      'contact.form.company.lbl': 'Company / Project',
+      'contact.form.company.ph':  'Developer, real estate fund, industry...',
+      'contact.form.msg.lbl':     'Message',
+      'contact.form.msg.ph':      'Describe your project in a few lines...',
+      'contact.form.submit':      'Send message',
+      'contact.form.or':          'or directly:',
+      'contact.form.success':     "Message sent — I'll get back to you today.",
+      'contact.form.error':       'Send error. Write directly to <a href="mailto:thomas@pixelshake.be">thomas@pixelshake.be</a>',
 
       // Footer
       'footer.contact.k': 'Contact',
@@ -755,10 +791,16 @@
     if (!T[lang]) return;
     const dict = T[lang];
 
-    // Update all translatable elements
+    // Update all translatable elements (innerHTML)
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
       const key = el.dataset.i18nHtml;
       if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+
+    // Update placeholder text
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.dataset.i18nPlaceholder;
+      if (dict[key] !== undefined) el.placeholder = dict[key];
     });
 
     // Re-split hero lines after innerHTML update (kinetic animation)
@@ -792,6 +834,47 @@
       const active = btn.dataset.lang === 'fr';
       btn.classList.toggle('active', active);
       btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  // ─── CONTACT FORM — Netlify Forms AJAX ───
+  const contactForm = document.getElementById('contact-form');
+  const formSuccess = document.getElementById('form-success');
+  const formError   = document.getElementById('form-error');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = contactForm.querySelector('.form-submit');
+      submitBtn.classList.add('is-loading');
+      submitBtn.disabled = true;
+      formSuccess.hidden = true;
+      formError.hidden   = true;
+
+      try {
+        const data = new FormData(contactForm);
+        const body = new URLSearchParams(data).toString();
+
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
+
+        if (res.ok) {
+          formSuccess.hidden = false;
+          contactForm.reset();
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          formError.hidden = false;
+        }
+      } catch (_) {
+        formError.hidden = false;
+      } finally {
+        submitBtn.classList.remove('is-loading');
+        submitBtn.disabled = false;
+      }
     });
   }
 
