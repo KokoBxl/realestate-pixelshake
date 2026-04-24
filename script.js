@@ -250,14 +250,14 @@
       'hero.meta.cov.lbl':    'couverture principale',
 
       // Marquee
-      'mq.1': "Film d'entreprise",
-      'mq.2': 'Architecture',
-      'mq.3': 'Portrait corporate',
-      'mq.4': 'Événement',
-      'mq.5': 'Aftermovie',
-      'mq.6': 'Drone aérien',
-      'mq.7': 'Documentaire',
-      'mq.8': 'Suivi long terme',
+      'mq.1': 'Film immobilier',
+      'mq.2': 'Reportage chantier',
+      'mq.3': 'Vue aérienne',
+      'mq.4': 'Vente sur plan',
+      'mq.5': 'Timelapse',
+      'mq.6': 'Architecture &amp; BTP',
+      'mq.7': 'Film corporate',
+      'mq.8': 'Drone certifié',
 
       // Clients
       'clients.label': 'Ils me font confiance',
@@ -424,14 +424,14 @@
       'hero.meta.cov.lbl':    'hoofddekking',
 
       // Marquee
-      'mq.1': 'Bedrijfsfilm',
-      'mq.2': 'Architectuur',
-      'mq.3': 'Corporate portret',
-      'mq.4': 'Evenement',
-      'mq.5': 'Aftermovie',
-      'mq.6': 'Drone luchtfoto',
-      'mq.7': 'Documentaire',
-      'mq.8': 'Lange termijn opvolging',
+      'mq.1': 'Vastgoedfilm',
+      'mq.2': 'Werfopvolging',
+      'mq.3': 'Luchtfoto',
+      'mq.4': 'Verkoop op plan',
+      'mq.5': 'Timelapse',
+      'mq.6': 'Architectuur &amp; Bouw',
+      'mq.7': 'Bedrijfsfilm',
+      'mq.8': 'Gecertificeerde drone',
 
       // Clients
       'clients.label': 'Zij vertrouwen mij',
@@ -598,14 +598,14 @@
       'hero.meta.cov.lbl':    'main coverage',
 
       // Marquee
-      'mq.1': 'Corporate film',
-      'mq.2': 'Architecture',
-      'mq.3': 'Corporate portrait',
-      'mq.4': 'Event',
-      'mq.5': 'Aftermovie',
-      'mq.6': 'Aerial drone',
-      'mq.7': 'Documentary',
-      'mq.8': 'Long-term follow-up',
+      'mq.1': 'Real estate film',
+      'mq.2': 'Site monitoring',
+      'mq.3': 'Aerial view',
+      'mq.4': 'Off-plan sales',
+      'mq.5': 'Timelapse',
+      'mq.6': 'Architecture &amp; Construction',
+      'mq.7': 'Corporate film',
+      'mq.8': 'Certified drone',
 
       // Clients
       'clients.label': 'They trust me',
